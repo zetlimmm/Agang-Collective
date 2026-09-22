@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGANG COLLECTIVE</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#0D0D0D',
+                            card: '#151515',
+                            red: '#E60000',
+                            redHover: '#FF1E27'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        body { background-color: #0D0D0D; color: #FFFFFF; font-family: 'Inter', sans-serif; }
+        
+        /* Efek Hover Foto Membesar tapi tetap dalam kotak */
+        .img-container { overflow: hidden; }
+        .img-zoom { transition: transform 0.4s ease; }
+        .img-container:hover .img-zoom { transform: scale(1.08); }
+        
+        /* Efek Glow Merah Halus */
+        .hover-glow:hover { box-shadow: 0 0 20px rgba(230, 0, 0, 0.2); border-color: rgba(230,0,0,0.5); }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-red selection:text-white">
+
+    <!-- 1. NAVBAR WRAPPER (Tempat mengatur perubahan bentuk navbar) -->
+    <div id="nav-wrapper" class="fixed top-0 w-full z-50 flex justify-center transition-all duration-500">
+        <nav id="navbar" class="w-full bg-brand-black/90 backdrop-blur-md border-b border-white/10 transition-all duration-500 py-3 px-6 md:px-12 flex justify-between items-center rounded-none">
+            
+            <!-- BAGIAN LOGO NAVBAR -->
+            <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                <img src="gambar&video/logo-emblem-red-only.png" alt="Logo Agang Collective" class="h-10 md:h-12 w-auto object-contain">
+            </div>
+            <!-- END BAGIAN LOGO NAVBAR -->
+            
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#about" class="nav-link hover:text-brand-red transition-colors duration-300">About Us</a>
+                <a href="#services" class="nav-link hover:text-brand-red transition-colors duration-300">Our Services</a>
+                <a href="#portfolio" class="nav-link hover:text-brand-red transition-colors duration-300">Portfolio</a>
+                <a href="#team" class="nav-link hover:text-brand-red transition-colors duration-300">Our Team</a>
+                <a href="#contact" class="nav-link hover:text-brand-red transition-colors duration-300">Contact</a>
+            </div>
+            
+            <a href="https://wa.me/6287890518616?text=Halo%20Agang%20Collective,%20saya%20ingin%20berkonsultasi..." target="_blank" class="hidden md:block bg-brand-red hover:bg-brand-redHover px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0_0_15px_rgba(230,0,0,0.3)]">
+                💬 Schedule a Consultation
+            </a>
+        </nav>
+    </div>
+
+    <!-- 2. HERO SECTION DENGAN VIDEO BACKGROUND -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20 relative overflow-hidden">
+        
+        <!-- Video Background dari Imgur -->
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover -z-20 filter brightness-75">
+            <source src="gambar&video/loop (3).mp4" type="video/mp4">
+        </video>
+
+        <!-- Overlay Gelap Khas Agang -->
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-black/35 via-brand-black/55 to-brand-black -z-10"></div>
+
+        <div class="border border-brand-red/30 bg-brand-red/10 backdrop-blur-sm text-brand-red/80 px-4 py-1 rounded-full text-xs font-semibold tracking-wider mb-6">
+            MEDIA & DIGITAL ACCELERATION AGENCY — MAKASSAR
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold max-w-4xl leading-tight mb-6 drop-shadow-lg">
+            Empowering Growth, <br> Elevating <span class="text-brand-red">Local Pride</span>
+        </h1>
+        <p class="text-gray-400 max-w-2xl text-lg mb-10 drop-shadow">
+            Agang Collective adalah agensi media dan akselerasi digital yang berfokus mendampingi UMKM untuk naik kelas sebagai mitra bertumbuh yang berjalan berdampingan.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://wa.me/6287890518616" target="_blank" class="bg-brand-red hover:bg-brand-redHover px-8 py-3 rounded-full font-semibold transition-all shadow-lg shadow-brand-red/30">Schedule a Consultation</a>
+            <a href="#services" class="border border-white/20 bg-black/30 backdrop-blur-sm hover:border-brand-red hover:text-brand-red px-8 py-3 rounded-full font-semibold transition-all">Explore Our Services ↓</a>
+        </div>
+    </section>
+
+    <!-- 3. ABOUT US -->
+    <section id="about" class="py-24 px-6 md:px-12 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <h4 class="text-brand-red font-bold text-sm tracking-widest mb-2 uppercase">About Us</h4>
+            <h2 class="text-4xl font-bold mb-8 leading-tight">Teman Bertumbuh bagi <br><span class="text-brand-red">UMKM Indonesia</span></h2>
+            
+            <div class="border-l-4 border-brand-red pl-6 mb-8">
+                <h3 class="text-lg font-bold mb-2">VISI</h3>
+                <p class="text-gray-400">Menjadi teman bertumbuh (growth partner) terdepan bagi pelaku industri properti di Indonesia melalui strategi digitalisasi pemasaran yang berkelanjutan, inovatif, dan berdampak nyata.</p>
+            </div>
+            
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-brand-red">MISI</h3>
+                <ul class="space-y-4 text-gray-400">
+                    <li class="flex gap-4"><span class="text-brand-red font-bold">01</span> Membangun kemitraan yang setara, transparan, dan tanpa jarak.</li>
+                    <li class="flex gap-4"><span class="text-brand-red font-bold">02</span> Menghadirkan solusi kreatif yang terukur untuk memperkuat identitas brand lokal dan memperluas jangkauan pasar.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Cards Value -->
+            <div class="bg-brand-card p-6 rounded-2xl border border-white/5 hover-glow transition-all group">
+                <div class="text-brand-red text-2xl mb-4">🎯</div>
+                <h4 class="font-bold mb-2 group-hover:text-brand-red transition">Fokus Tepat Sasaran</h4>
+                <p class="text-sm text-gray-400">Spesialisasi digitalisasi usaha lokal & UMKM.</p>
+            </div>
+            <div class="bg-brand-card p-6 rounded-2xl border border-white/5 hover-glow transition-all group">
+                <div class="text-brand-red text-2xl mb-4">📖</div>
+                <h4 class="font-bold mb-2 group-hover:text-brand-red transition">Pemasaran Berbasis Kisah</h4>
+                <p class="text-sm text-gray-400">Mengangkat cerita, proses, dan dedikasi di balik setiap merek.</p>
+            </div>
+            <div class="bg-brand-card p-6 rounded-2xl border border-white/5 hover-glow transition-all group">
+                <div class="text-brand-red text-2xl mb-4">🛡️</div>
+                <h4 class="font-bold mb-2 group-hover:text-brand-red transition">Keaslian Merek</h4>
+                <p class="text-sm text-gray-400">Bisnis berkembang, identitas autentik tetap terjaga.</p>
+            </div>
+            <div class="bg-brand-card p-6 rounded-2xl border border-white/5 hover-glow transition-all group">
+                <div class="text-brand-red text-2xl mb-4">📈</div>
+                <h4 class="font-bold mb-2 group-hover:text-brand-red transition">Dampak Terukur (ROI)</h4>
+                <p class="text-sm text-gray-400">Optimasi e-commerce dan strategi iklan berbasis konversi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. OUR SERVICES -->
+    <section id="services" class="py-24 px-6 md:px-12 max-w-7xl mx-auto bg-brand-black relative">
+        <h4 class="text-brand-red font-bold text-sm tracking-widest mb-2 uppercase">Our Services</h4>
+        <h2 class="text-4xl font-bold mb-4">Solusi Digital <span class="text-brand-red">End-to-End</span> untuk<br>Bisnis Anda</h2>
+        <p class="text-gray-400 mb-12 max-w-2xl">Dari konten hingga konversi — kami mendampingi setiap langkah pertumbuhan digital usaha Anda.</p>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-brand-card p-8 rounded-2xl border border-white/5 hover-glow transition-all group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 rounded-full bg-brand-red/10 flex items-center justify-center text-brand-red text-xl">📱</div>
+                    <span class="text-4xl font-black text-white/5 group-hover:text-brand-red/20 transition">01</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-brand-red transition">Social Media Management</h3>
+                <p class="text-gray-400">Mengelola Instagram/TikTok (jadwal posting, caption, desain visual, hingga engagement building).</p>
+            </div>
+            
+            <div class="bg-brand-card p-8 rounded-2xl border border-white/5 hover-glow transition-all group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 rounded-full bg-brand-red/10 flex items-center justify-center text-brand-red text-xl">🎬</div>
+                    <span class="text-4xl font-black text-white/5 group-hover:text-brand-red/20 transition">02</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-brand-red transition">Content Creation</h3>
+                <p class="text-gray-400">Produksi media kreatif (foto produk profesional, video Reels/TikTok, & copywriting menarik).</p>
+            </div>
+
+            <div class="bg-brand-card p-8 rounded-2xl border border-white/5 hover-glow transition-all group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 rounded-full bg-brand-red/10 flex items-center justify-center text-brand-red text-xl">📢</div>
+                    <span class="text-4xl font-black text-white/5 group-hover:text-brand-red/20 transition">03</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-brand-red transition">Property Ads / Paid Ads</h3>
+                <p class="text-gray-400">Menjalankan iklan berbayar terarah (Meta & TikTok Ads) untuk menjangkau calon pembeli potensial dan memaksimalkan konversi.</p>
+            </div>
+
+            <div class="bg-brand-card p-8 rounded-2xl border border-white/5 hover-glow transition-all group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 rounded-full bg-brand-red/10 flex items-center justify-center text-brand-red text-xl">🎯</div>
+                    <span class="text-4xl font-black text-white/5 group-hover:text-brand-red/20 transition">04</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-brand-red transition">Lead Generation</h3>
+                <p class="text-gray-400">Mendapatkan dan mengelola calon pembeli potensial melalui WhatsApp, formulir interaktif, atau landing page.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. TESTIMONIALS -->
+    <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <h4 class="text-brand-red font-bold text-sm tracking-widest mb-2 uppercase">Testimonials</h4>
+        <h2 class="text-4xl font-bold mb-4">Kata Mereka <span class="text-brand-red">tentang Kami</span></h2>
+        <p class="text-gray-400 mb-12">Cerita dari pelaku usaha lokal yang bertumbuh bersama Agang Collective.</p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-brand-card p-8 rounded-2xl border border-white/5">
+                <div class="flex justify-between mb-6">
+                    <span class="text-4xl text-brand-red font-serif">"</span>
+                    <div class="text-brand-red text-sm">★★★★★</div>
+                </div>
+                <p class="text-gray-300 italic mb-8">"Omzet kami naik hampir tiga kali lipat dalam empat bulan. Kontennya konsisten, iklannya benar-benar terukur."</p>
+                <div>
+                    <h5 class="font-bold">Rahmat H.</h5>
+                    <p class="text-sm text-gray-500">Pemilik Kopi Sapa Senja, Makassar</p>
+                </div>
+            </div>
+            
+            <div class="bg-brand-card p-8 rounded-2xl border border-white/5">
+                <div class="flex justify-between mb-6">
+                    <span class="text-4xl text-brand-red font-serif">"</span>
+                    <div class="text-brand-red text-sm">★★★★★</div>
+                </div>
+                <p class="text-gray-300 italic mb-8">"Foto produk dan video Reels dari tim Agang bikin brand kami terlihat jauh lebih profesional di mata pelanggan."</p>
+                <div>
+                    <h5 class="font-bold">Siti N.</h5>
+                    <p class="text-sm text-gray-500">Owner Dapur Bu Sarmi</p>
+                </div>
+            </div>
+
+            <div class="bg-brand-card p-8 rounded-2xl border border-white/5">
+                <div class="flex justify-between mb-6">
+                    <span class="text-4xl text-brand-red font-serif">"</span>
+                    <div class="text-brand-red text-sm">★★★★★</div>
+                </div>
+                <p class="text-gray-300 italic mb-8">"Leads WhatsApp masuk hampir setiap hari sejak campaign Meta Ads kami dikelola Agang Collective."</p>
+                <div>
+                    <h5 class="font-bold">Andi P.</h5>
+                    <p class="text-sm text-gray-500">Agen Hasanuddin Land</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PORTFOLIO -->
+    <section id="portfolio" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <h4 class="text-brand-red font-bold text-sm tracking-widest mb-2 uppercase">Portfolio</h4>
+        <h2 class="text-4xl font-bold mb-12">Featured <span class="text-brand-red">Case Study</span></h2>
+
+        <div class="bg-brand-card rounded-3xl overflow-hidden grid md:grid-cols-2 border border-white/5 group hover-glow transition-all">
+            <div class="img-container bg-black/50 h-64 md:h-full">
+                <!-- Ganti dengan link foto portfoliomu -->
+               <img src="gambar&video/Portfolio-Mockup.png" alt="Portfolio Mockup" class="w-full h-full object-cover img-zoom opacity-80 group-hover:opacity-100 transition-opacity">
+            </div>
+            <div class="p-10 flex flex-col justify-center">
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 bg-brand-red/10 text-brand-red border border-brand-red/30 rounded-full text-xs font-semibold">UI/UX Design</span>
+                    <span class="px-3 py-1 bg-brand-red/10 text-brand-red border border-brand-red/30 rounded-full text-xs font-semibold">Property Branding</span>
+                    <span class="px-3 py-1 bg-brand-red/10 text-brand-red border border-brand-red/30 rounded-full text-xs font-semibold">Lead Generation</span>
+                </div>
+                <h3 class="text-3xl font-bold mb-4 group-hover:text-brand-red transition">Agang Property — Digital Platform & Visual Identity</h3>
+                <p class="text-gray-400 mb-8">Perancangan antarmuka web dan tata kelola aset digital terintegrasi untuk meningkatkan daya tarik properti premium serta konversi leads.</p>
+                <a href="#" class="text-brand-red font-semibold hover:text-white transition flex items-center gap-2">Diskusikan proyek serupa ↗</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. OUR TEAM -->
+    <section id="team" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <h4 class="text-brand-red font-bold text-sm tracking-widest mb-2 uppercase">Our Team</h4>
+        <h2 class="text-4xl font-bold mb-12">Orang-orang di Balik <br><span class="text-brand-red">Pertumbuhan</span> Anda</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Team 1 -->
+            <div class="bg-brand-card rounded-2xl overflow-hidden group hover-glow border border-white/5 transition-all">
+                <div class="img-container h-72 bg-gray-800">
+                   <img src="gambar&video/lim.png" alt="Nur Alim" class="w-full h-full object-cover img-zoom grayscale group-hover:grayscale-0 transition-all">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-xl group-hover:text-brand-red transition">Nur Alim</h3>
+                    <p class="text-brand-red text-sm font-semibold mb-3">Chief Executive Officer (CEO)</p>
+                    <p class="text-xs text-gray-400">Pemimpin tim, strategi pemasaran digital, hubungan klien, quality control & pitching.</p>
+                </div>
+            </div>
+            
+            <!-- Team 2 -->
+            <div class="bg-brand-card rounded-2xl overflow-hidden group hover-glow border border-white/5 transition-all">
+                <div class="img-container h-72 bg-gray-800">
+                  <img src="gambar&video/cina.png" alt="Muh Rifqy" class="w-full h-full object-cover img-zoom grayscale group-hover:grayscale-0 transition-all">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-xl group-hover:text-brand-red transition">Muh Rifqy Putra Handoko</h3>
+                    <p class="text-brand-red text-sm font-semibold mb-3">Ads Specialist</p>
+                    <p class="text-xs text-gray-400">Mengelola & mengoptimasi iklan berbayar (Meta, Google, TikTok Ads), A/B testing, & laporan ROI.</p>
+                </div>
+            </div>
+
+            <!-- Team 3 -->
+            <div class="bg-brand-card rounded-2xl overflow-hidden group hover-glow border border-white/5 transition-all">
+                <div class="img-container h-72 bg-gray-800">
+                    <img src="gambar&video/pasel.png" alt="Ahmad Fazle" class="w-full h-full object-cover img-zoom grayscale group-hover:grayscale-0 transition-all">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-xl group-hover:text-brand-red transition">Ahmad Fazle Idrus</h3>
+                    <p class="text-brand-red text-sm font-semibold mb-3">Content Creator</p>
+                    <p class="text-xs text-gray-400">Ideasi konten, strategi visual, foto/video Reels/TikTok, & penyusunan kalender konten bulanan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CTA BANNER & CONTACT -->
+    <section id="contact">
+        <!-- CTA Banner -->
+        <div class="bg-gradient-to-r from-brand-black via-brand-red/20 to-brand-black py-20 px-6 text-center border-y border-white/10">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Ready to Grow With Us?</h2>
+            <p class="text-gray-300 mb-8 max-w-xl mx-auto">Mari jadikan usaha lokal Anda ke tingkat berikutnya bersama Agang Collective.</p>
+            <a href="https://wa.me/6287890518616?text=Halo%20Agang%20Collective,%20saya%20siap%20mengembangkan%20bisnis%20saya!" target="_blank" class="bg-brand-red hover:bg-brand-redHover px-8 py-4 rounded-full font-bold text-lg transition-all inline-block shadow-[0_0_20px_rgba(230,0,0,0.4)]">
+                💬 Schedule a Consultation
+            </a>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="py-24 px-6 md:px-12 max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
+            <div>
+                <h4 class="text-brand-red font-bold text-sm tracking-widest mb-2 uppercase">Contact</h4>
+                <h2 class="text-5xl font-bold mb-6">Get in <span class="text-brand-red">Touch</span></h2>
+                <p class="text-gray-400 mb-10">Ceritakan kebutuhan bisnis Anda — tim kami siap membantu merancang strategi digital yang tepat.</p>
+                
+                <div class="space-y-6">
+                    <a href="mailto:agangcollective@gmail.com" class="flex items-center gap-4 group">
+                        <div class="w-12 h-12 rounded-xl bg-brand-card border border-white/10 flex items-center justify-center group-hover:border-brand-red group-hover:text-brand-red transition-all">✉️</div>
+                        <span class="text-gray-300 group-hover:text-white transition">agangcollective@gmail.com</span>
+                    </a>
+                    <div class="flex items-center gap-4 group">
+                        <div class="w-12 h-12 rounded-xl bg-brand-card border border-white/10 flex items-center justify-center group-hover:border-brand-red group-hover:text-brand-red transition-all">📍</div>
+                        <span class="text-gray-300 group-hover:text-white transition">Makassar, Indonesia</span>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <p class="text-sm text-gray-500 mb-4 uppercase tracking-widest font-semibold">Follow Us</p>
+                    <div class="flex gap-4">
+                        <a href="https://instagram.com/agangcollective" target="_blank" class="w-10 h-10 rounded-full bg-brand-card flex items-center justify-center hover:bg-brand-red hover:text-white transition-all">IG</a>
+                        <a href="https://wa.me/6287890518616" target="_blank" class="w-10 h-10 rounded-full bg-brand-card flex items-center justify-center hover:bg-brand-red hover:text-white transition-all">WA</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="bg-brand-card p-8 rounded-3xl border border-white/10">
+                <form onsubmit="kirimPesan(event)" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Your Name</label>
+                        <input type="text" id="name" required class="w-full bg-[#0D0D0D] border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-red transition-all placeholder-gray-600" placeholder="Nama Anda">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Your Email</label>
+                        <input type="email" id="email" required class="w-full bg-[#0D0D0D] border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-red transition-all placeholder-gray-600" placeholder="nama@email.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Your Message</label>
+                        <textarea id="message" required rows="4" class="w-full bg-[#0D0D0D] border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-red transition-all placeholder-gray-600 resize-none" placeholder="Ceritakan kebutuhan bisnis Anda..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-red hover:bg-brand-redHover py-4 rounded-xl font-bold transition-all flex justify-center items-center gap-2">
+                        🚀 Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer class="bg-[#050505] border-t border-white/5 py-12 px-6 md:px-12 text-sm">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 mb-12">
+            <div>
+                <!-- BAGIAN LOGO FOOTER -->
+                <img src="gambar&video/logo-red-agang.png" alt="Logo Agang Collective" class="h-10 md:h-12 w-auto object-contain">
+                <!-- END BAGIAN LOGO FOOTER -->
+                
+                <p class="text-gray-500 italic">"Seseorang dilihat dari karyanya, bukan angkanya. Yang terpenting adalah seberapa besar kita memberikan value dan dampak dari apa yang kita buat."</p>
+                <p class="text-brand-red mt-2 font-semibold">— Otto Toto Sugiri</p>
+            </div>
+            <div>
+                <h4 class="font-bold tracking-widest text-gray-400 mb-6 uppercase">Quick Links</h4>
+                <div class="flex flex-col gap-3 text-gray-400">
+                    <a href="#about" class="hover:text-brand-red transition">About Us</a>
+                    <a href="#services" class="hover:text-brand-red transition">Our Services</a>
+                    <a href="#portfolio" class="hover:text-brand-red transition">Portfolio</a>
+                    <a href="#team" class="hover:text-brand-red transition">Our Team</a>
+                    <a href="#contact" class="hover:text-brand-red transition">Contact</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold tracking-widest text-gray-400 mb-6 uppercase">Connect With Us</h4>
+                <div class="flex flex-col gap-3 text-gray-400">
+                    <a href="mailto:agangcollective@gmail.com" class="hover:text-brand-red transition">✉️ agangcollective@gmail.com</a>
+                    <a href="https://instagram.com/agangcollective" target="_blank" class="hover:text-brand-red transition">📸 @agangcollective</a>
+                    <a href="https://wa.me/6287890518616" target="_blank" class="hover:text-brand-red transition">📞 087890518616</a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between text-gray-600 text-xs">
+            <p>© 2026 AGANG COLLECTIVE. All Rights Reserved.</p>
+            <p>Empowering Growth, Elevating Local Pride</p>
+        </div>
+    </footer>
+
+    <!-- Logic Script: Animasi Navbar & Scroll Spy & Form -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const wrapper = document.getElementById('nav-wrapper');
+            const navbar = document.getElementById('navbar');
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                // 1. Logika Perubahan Bentuk Navbar (Morphing)
+                if (window.scrollY > 50) {
+                    // Berubah melayang (pill) saat di-scroll ke bawah
+                    wrapper.classList.add('pt-4', 'px-4');
+                    navbar.classList.add('max-w-6xl', 'rounded-full', 'border', 'shadow-2xl', 'shadow-brand-red/10', 'px-8');
+                    navbar.classList.remove('border-b', 'rounded-none', 'px-6', 'md:px-12');
+                } else {
+                    // Kembali penuh dari ujung ke ujung saat di posisi paling atas
+                    wrapper.classList.remove('pt-4', 'px-4');
+                    navbar.classList.remove('max-w-6xl', 'rounded-full', 'border', 'shadow-2xl', 'shadow-brand-red/10', 'px-8');
+                    navbar.classList.add('border-b', 'rounded-none', 'px-6', 'md:px-12');
+                }
+
+                // 2. Logika Scroll Spy (Warna Menu Navbar Aktif Menjadi Merah)
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    // Jarak deteksi section (mengurangi tinggi agar lebih responsif)
+                    if (window.scrollY >= (sectionTop - 250)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    // Hapus warna merah dari semua menu
+                    link.classList.remove('text-brand-red');
+                    // Tambahkan warna merah jika link sesuai dengan section yang sedang aktif
+                    if (current && link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('text-brand-red');
+                    }
+                });
+            });
+        });
+
+        // Fungsi untuk trigger kirim email langsung dari form
+        function kirimPesan(e) {
+            e.preventDefault(); 
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            const mailtoLink = `mailto:agangcollective@gmail.com?subject=Inquiry from Website - ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>
